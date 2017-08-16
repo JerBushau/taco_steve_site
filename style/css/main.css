@@ -1,0 +1,417 @@
+/*
+______ _____ _   _ _____ _____
+|  ___|  _  | \ | |_   _/  ___|
+| |_  | | | |  \| | | | \ `--.
+|  _| | | | | . ` | | |  `--. \
+| |   \ \_/ / |\  | | | /\__/ /
+\_|    \___/\_| \_/ \_/ \____/
+*/
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Condensed");
+/*
+ _____  _____ _   _  ___________  ___   _
+|  __ \|  ___| \ | ||  ___| ___ \/ _ \ | |
+| |  \/| |__ |  \| || |__ | |_/ / /_\ \| |
+| | __ |  __|| . ` ||  __||    /|  _  || |
+| |_\ \| |___| |\  || |___| |\ \| | | || |____
+ \____/\____/\_| \_/\____/\_| \_\_| |_/\_____/
+*/
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: #fcf0df; }
+
+.site-wrapper {
+  margin: auto;
+  min-height: 100vh;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 1.6s; }
+
+.logo-img {
+  margin: auto;
+  height: 100%;
+  width: 100%; }
+
+img {
+  height: 100%;
+  width: 100%; }
+
+article {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+/*
+ _   _  _____  ___ ______ ___________
+| | | ||  ___|/ _ \|  _  \  ___| ___ \
+| |_| || |__ / /_\ \ | | | |__ | |_/ /
+|  _  ||  __||  _  | | | |  __||    /
+| | | || |___| | | | |/ /| |___| |\ \
+\_| |_/\____/\_| |_/___/ \____/\_| \_|
+*/
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px; }
+  header .chat-bubble {
+    animation: chat-bubble 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    position: relative;
+    font-family: 'Permanent Marker', cursive;
+    margin: 10px 0 0;
+    padding: 10px;
+    border: 5px solid #000;
+    border-radius: 15px;
+    text-align: center;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+    font-size: 1.3em;
+    background: #fff; }
+    header .chat-bubble:before {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 60px;
+      right: auto;
+      top: auto;
+      bottom: -46px;
+      border: 23px solid;
+      border-color: #000 transparent transparent transparent; }
+    header .chat-bubble:after {
+      content: ' ';
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 63px;
+      right: 0;
+      top: auto;
+      bottom: -36px;
+      border: 20px solid;
+      border-color: #fff transparent transparent transparent; }
+
+.steve-logo {
+  display: flex;
+  min-width: 200px;
+  max-width: 450px;
+  padding: 10px; }
+
+/*
+ _   _   ___  _   _
+| \ | | / _ \| | | |
+|  \| |/ /_\ \ | | |
+| . ` ||  _  | | | |
+| |\  || | | \ \_/ /
+\_| \_/\_| |_/\___/
+*/
+nav {
+  margin-top: 10px; }
+  nav a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Permanent Marker', cursive;
+    padding: 10px;
+    margin: 5px;
+    min-width: 90px;
+    height: 45px;
+    background: #f19321;
+    box-shadow: 4px 8px 0 #910707;
+    color: #fff;
+    letter-spacing: 1.1px;
+    font-weight: normal;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: all 0.15s ease;
+    transform: translateZ(0); }
+    nav a:active {
+      box-shadow: 2px 3px 0 #910707; }
+
+/*
+ _____ _____ _____ _____ _____ _____ _   _  _____
+/  ___|  ___/  __ \_   _|_   _|  _  | \ | |/  ___|
+\ `--.| |__ | /  \/ | |   | | | | | |  \| |\ `--.
+ `--. \  __|| |     | |   | | | | | | . ` | `--. \
+/\__/ / |___| \__/\ | |  _| |_\ \_/ / |\  |/\__/ /
+\____/\____/ \____/ \_/  \___/ \___/\_| \_/\____/
+*/
+.steve-menu,
+.steve-location {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -50px;
+  height: 100vh;
+  overflow-y: scroll;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 10px 40px;
+  box-shadow: 0 0 14px;
+  background: linear-gradient(to top left, #7c84a7, #cfd8ff);
+  transition: all 0.7s;
+  transform: translateZ(0); }
+  .steve-menu::-webkit-scrollbar,
+  .steve-location::-webkit-scrollbar {
+    width: 0.2em; }
+  .steve-menu::-webkit-scrollbar-track,
+  .steve-location::-webkit-scrollbar-track {
+    background-color: transparent; }
+  .steve-menu::-webkit-scrollbar-thumb,
+  .steve-location::-webkit-scrollbar-thumb {
+    background-color: rgba(68, 68, 68, 0.8);
+    border-radius: 5px; }
+
+.section-header {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-bottom: 3px solid #000;
+  text-align: center;
+  background: #2176eb; }
+
+.back-button {
+  position: fixed;
+  padding: 6px;
+  opacity: 0;
+  font-family: 'Permanent Marker', cursive;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  bottom: -100px;
+  right: 5px;
+  height: 50px;
+  background: #eb9621;
+  box-shadow: 3px 6px 0 #910707;
+  color: #fff;
+  letter-spacing: 1.1px;
+  font-weight: normal;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: all .653s, box-shadow 0.15s;
+  transform: translateZ(0); }
+  .back-button:active {
+    box-shadow: 1px 1px 0 #910707; }
+
+.visible {
+  opacity: 0.85;
+  visibility: visible;
+  bottom: 7px; }
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  left: 0; }
+
+/*
+___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
+|  \/  ||  ___| \ | | | | | /  ___|  ___/  __ \_   _|_   _|  _  | \ | |
+| .  . || |__ |  \| | | | | \ `--.| |__ | /  \/ | |   | | | | | |  \| |
+| |\/| ||  __|| . ` | | | |  `--. \  __|| |     | |   | | | | | | . ` |
+| |  | || |___| |\  | |_| | /\__/ / |___| \__/\ | |  _| |_\ \_/ / |\  |
+\_|  |_/\____/\_| \_/\___/  \____/\____/ \____/ \_/  \___/ \___/\_| \_/
+*/
+.steve-menu h2 {
+  display: inline-block;
+  margin: 10px 10px 5px;
+  border-bottom: 2px solid #000;
+  font-family: 'Permanent Marker', cursive;
+  font-weight: normal; }
+.steve-menu h4 {
+  text-align: center; }
+.steve-menu ul {
+  text-align: center;
+  list-style: none;
+  margin: 0 10px 10px;
+  padding: 0; }
+  .steve-menu ul li {
+    margin: 5px;
+    font-size: 1.289em; }
+
+.steve-menu-sides,
+.steve-menu-bevs,
+.steve-menu-entrees {
+  width: 100%; }
+
+.meat-options {
+  text-align: center;
+  font-size: 1.28em;
+  text-decoration: underline; }
+
+.menu-item {
+  margin: 10px 10px 10px; }
+  .menu-item p {
+    margin: 0; }
+  .menu-item .name-and-price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    border-bottom: 2px dotted #353743; }
+  .menu-item .item-name {
+    font-size: 1.2em; }
+  .menu-item .item-description {
+    margin-left: 10px; }
+
+.beer {
+  text-align: center; }
+
+.menu-notice {
+  margin: 10px; }
+
+/*
+ _     _____ _____   ___ _____ _____ _____ _   _   _____ _____ _____ _____ _____ _____ _   _
+| |   |  _  /  __ \ / _ \_   _|_   _|  _  | \ | | /  ___|  ___/  __ \_   _|_   _|  _  | \ | |
+| |   | | | | /  \// /_\ \| |   | | | | | |  \| | \ `--.| |__ | /  \/ | |   | | | | | |  \| |
+| |   | | | | |    |  _  || |   | | | | | | . ` |  `--. \  __|| |     | |   | | | | | | . ` |
+| |___\ \_/ / \__/\| | | || |  _| |_\ \_/ / |\  | /\__/ / |___| \__/\ | |  _| |_\ \_/ / |\  |
+\_____/\___/ \____/\_| |_/\_/  \___/ \___/\_| \_/ \____/\____/ \____/ \_/  \___/ \___/\_| \_/
+*/
+.steve-location p {
+  text-align: center;
+  margin-top: 21.280px; }
+.steve-location h3,
+.steve-location h4 {
+  text-align: center; }
+.steve-location h3 {
+  margin-bottom: 0; }
+.steve-location h5 {
+  margin: 10px 0; }
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .social-media h1 {
+    text-align: center;
+    margin: 0 10px; }
+  .social-media h3 {
+    margin: 20px; }
+  .social-media .social-media-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; }
+  .social-media .fb {
+    height: 80px;
+    width: 80px;
+    padding: 10px; }
+  .social-media .yelp {
+    width: 166.666666667px;
+    height: 106.666666667px;
+    padding: 0; }
+
+.hours {
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center; }
+  .hours h2 {
+    text-align: center;
+    font-weight: normal;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: normal;
+    font-size: 1.3em; }
+  .hours ul {
+    min-width: 4em;
+    list-style: square; }
+  .hours .hours-day {
+    display: inline-block;
+    font-weight: 600;
+    width: 40px; }
+
+.phone,
+.address {
+  color: #910705;
+  font-weight: 600;
+  font-size: 1.5em; }
+
+.address {
+  font-size: 1.2em; }
+
+#map {
+  min-height: 325px;
+  width: 100%; }
+
+/*
+  ___   _   _ ________  ___  ___ _____ _____ _____ _   _  _____
+ / _ \ | \ | |_   _|  \/  | / _ \_   _|_   _|  _  | \ | |/  ___|
+/ /_\ \|  \| | | | | .  . |/ /_\ \| |   | | | | | |  \| |\ `--.
+|  _  || . ` | | | | |\/| ||  _  || |   | | | | | | . ` | `--. \
+| | | || |\  |_| |_| |  | || | | || |  _| |_\ \_/ / |\  |/\__/ /
+\_| |_/\_| \_/\___/\_|  |_/\_| |_/\_/  \___/ \___/\_| \_/\____/
+*/
+@keyframes chat-bubble {
+  0% {
+    visibility: visible;
+    transform: scale(0);
+    opacity: 0; }
+  100% {
+    visibility: visible;
+    transform: scale(1);
+    opacity: 1; } }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+/*
+___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
+|  \/  ||  ___|  _  \_   _|/ _ \  |  _  | | | |  ___| ___ \_   _|  ___/  ___|
+| .  . || |__ | | | | | | / /_\ \ | | | | | | | |__ | |_/ / | | | |__ \ `--.
+| |\/| ||  __|| | | | | | |  _  | | | | | | | |  __||    /  | | |  __| `--. \
+| |  | || |___| |/ / _| |_| | | | \ \/' / |_| | |___| |\ \ _| |_| |___/\__/ /
+\_|  |_/\____/|___/  \___/\_| |_/  \_/\_\___/\____/\_| \_|\___/\____/\____/
+*/
+@media (min-width: 750px) {
+  body {
+    font-size: 1.2em; }
+
+  .logo-img {
+    margin: 0;
+    height: 100%;
+    width: 100%; }
+
+  .steve-menu,
+  .steve-location {
+    padding-bottom: 10px; }
+
+  .sides-and-bevs {
+    display: flex;
+    width: 100%;
+    justify-content: space-around; }
+
+  .steve-menu-sides,
+  .steve-menu-bevs {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    flex-basis: 45%; }
+
+  .steve-menu-entrees h2 {
+    display: block;
+    text-align: left; }
+
+  #map {
+    min-height: 600px; } }
+
+/*# sourceMappingURL=main.css.map */

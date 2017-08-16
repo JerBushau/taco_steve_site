@@ -1,0 +1,16 @@
+{
+  "name": "taco_steve",
+  "version": "1.0.0",
+  "description": "Website for Taco Steve in New Albany",
+  "main": "index.html",
+  "scripts": {
+    "watch-sass":"sass --cache-location style/sass/.sass_cache --watch style/sass:style/css",
+    "test": "none yet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none yet"
+  },
+  "author": "Jeremiah Bushau",
+  "license": "ISC"
+}
