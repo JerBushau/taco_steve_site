@@ -1,3 +1,5 @@
+// need to declare vars and dry up pretty badly >.<
+
 /*
 ______ _____ _   _ _____ _____
 |  ___|  _  | \ | |_   _/  ___|
@@ -36,12 +38,21 @@ body {
 .site-wrapper {
   margin: auto;
   min-height: 100vh;
-  max-width: 1500px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   animation: fade-in 1.6s;
+  transition: background 0.4s;
+}
+
+.button-wrangler{
+  position: fixed;
+  margin: auto;
+  bottom: 0;
+  width: 100%;
+  max-width: 1400px;
 }
 
 .logo-img {
@@ -173,59 +184,62 @@ nav {
 */
 
 .steve-menu,
-.steve-location {
+.steve-contact {
   opacity: 0;
   visibility: hidden;
+  color: #eaeaeb;
   position: fixed;
   // display: flex;
   top: 0;
   bottom: 0;
-  left: -50px;
+  // left: -25px;
   height: 100vh;
   overflow-y: scroll;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 10px 10px 40px;
-  box-shadow: 0 0 14px;
-  background: linear-gradient(to top left, #7c84a7, #cfd8ff);
-  transition: all 0.7s;
+  max-width: 1100px;
+  padding: 10px;
+  border-left: 10px solid #222;
+  border-right: 10px solid #222;
+  // box-shadow: 0 0 14px #000;
+  background: linear-gradient(to bottom left, #42444b 35%, #2E3038);
+  // background: #2E3038;
+  transition: all 0.4s;
   transform: translateZ(0);
-  &::-webkit-scrollbar {
-    width: 0.2em;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(68 ,68 ,68, 0.8);
-    border-radius: 5px;
-  }
+  transform: translate(-5%, 0);
 }
 
 .section-header {
   width: 100%;
+  color: #333;
+  // text-shadow: 1px 1px 2px #000;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  border-bottom: 3px solid #000;
+  // border-bottom: 3px solid #000;
+  font-family: 'Permanent Marker', cursive;
+  box-shadow: 4px 8px 0 #377433;
+  letter-spacing: 1.1px;
+  font-weight: normal;
+  border-radius: 15px;
   text-align: center;
-  background: #2176eb;
+  background:linear-gradient(to bottom left, #6fe967 25%, #8bed85);;
 }
 
 .back-button {
-  position: fixed;
+  position: absolute;
   padding: 6px;
   opacity: 0;
   font-family: 'Permanent Marker', cursive;
   cursor: pointer;
   display: flex;
   align-items: center;
-  bottom: -100px;
-  right: 5px;
+  bottom: -70px;
+  right: 10px;
   height: 50px;
   background: rgba(235, 150, 33, 1);
   box-shadow: 3px 6px 0 #910707;
@@ -234,24 +248,29 @@ nav {
   font-weight: normal;
   text-decoration: none;
   border-radius: 15px;
-  transition: all .653s, box-shadow 0.15s;
+  transition: all .5s, box-shadow 0.15s;
   transform: translateZ(0);
   &:active {
     box-shadow: 1px 1px 0 #910707;
   }
 }
 
-.visible {
-  opacity: 0.85;
+.back-button-visible {
+  opacity: 0.89;
   visibility: visible;
-  bottom: 7px;
+  bottom: 55px;
 }
 
-.active {
+.section-active {
   opacity: 1;
   visibility: visible;
-  left: 0;
+  // left: 50%;
+  transform: translate(0, 0);
   // max-height: initial;
+}
+
+.dark-bg {
+  background: #b2b4ca;
 }
 
 /*
@@ -267,9 +286,10 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
   h2 {
     display: inline-block;
     margin: 10px 10px 5px;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #eaeaeb;
     font-family: 'Permanent Marker', cursive;
     font-weight: normal;
+    text-shadow: 1px 1px 0 #000;
   }
   h4 {
     text-align: center;
@@ -280,8 +300,8 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
     margin: 0 10px 10px;
     padding: 0;
     li {
-      margin: 5px;
-      font-size: 1.289em
+      margin: 7px;
+      font-size: 1.189em
     }
   }
 }
@@ -307,10 +327,12 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
     display: flex;
     justify-content: space-between;
     margin-bottom: 7px;
-    border-bottom: 2px dotted #353743;
+    border-bottom: 2px dotted #eaeaeb;
+    text-shadow: 1px 1px 0 #000;
   }
   .item-name {
     font-size: 1.2em;
+
   }
   .item-description {
     margin-left: 10px;
@@ -326,15 +348,15 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
 }
 
 /*
- _     _____ _____   ___ _____ _____ _____ _   _   _____ _____ _____ _____ _____ _____ _   _
-| |   |  _  /  __ \ / _ \_   _|_   _|  _  | \ | | /  ___|  ___/  __ \_   _|_   _|  _  | \ | |
-| |   | | | | /  \// /_\ \| |   | | | | | |  \| | \ `--.| |__ | /  \/ | |   | | | | | |  \| |
-| |   | | | | |    |  _  || |   | | | | | | . ` |  `--. \  __|| |     | |   | | | | | | . ` |
-| |___\ \_/ / \__/\| | | || |  _| |_\ \_/ / |\  | /\__/ / |___| \__/\ | |  _| |_\ \_/ / |\  |
-\_____/\___/ \____/\_| |_/\_/  \___/ \___/\_| \_/ \____/\____/ \____/ \_/  \___/ \___/\_| \_/
+ _____ _____ _   _ _____ ___  _____ _____   _____ _____ _____ _____ _____ _____ _   _
+/  __ \  _  | \ | |_   _/ _ \/  __ \_   _| /  ___|  ___/  __ \_   _|_   _|  _  | \ | |
+| /  \/ | | |  \| | | |/ /_\ \ /  \/ | |   \ `--.| |__ | /  \/ | |   | | | | | |  \| |
+| |   | | | | . ` | | ||  _  | |     | |    `--. \  __|| |     | |   | | | | | | . ` |
+| \__/\ \_/ / |\  | | || | | | \__/\ | |   /\__/ / |___| \__/\ | |  _| |_\ \_/ / |\  |
+ \____/\___/\_| \_/ \_/\_| |_/\____/ \_/   \____/\____/ \____/ \_/  \___/ \___/\_| \_/
 */
 
-.steve-location {
+.steve-contact {
   p {
     text-align: center;
     margin-top: 21.280px;
@@ -345,9 +367,15 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
   }
   h3 {
     margin-bottom: 0;
+    text-shadow: 1px 1px 0 #000;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: normal;
   }
   h5 {
     margin: 10px 0;
+  }
+  small {
+    display: block;
   }
 }
 
@@ -374,19 +402,23 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
     padding: 10px;
   }
   .yelp {
-    width: 166.666666667px;
-    height: 106.666666667px;
-    padding: 0;
+    width: 147.4px;
+    height: 84.8px;
+    padding: 10px;
   }
 }
 
 .hours {
   display: flex;
+  flex-direction: column;
   width: auto;
   justify-content: center;
   align-items: center;
   h2 {
     text-align: center;
+    text-shadow: 1px 1px 0 #000;
+    margin-bottom: 0;
+    // border-bottom: 2px solid #333;
     font-weight: normal;
     font-family: 'Permanent Marker', cursive;
     font-weight: normal;
@@ -394,20 +426,40 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
   }
   ul {
     min-width: 4em;
-    list-style: square;
+    list-style: none;
+    padding: 0;
+    li {
+      border-bottom: 2px dotted #333;
+    }
   }
   .hours-day {
-    display: inline-block;
+    display: inline-flex;
+    align-self: flex-start;
     font-weight: 600;
-    width: 40px;
+    min-width: 110px;
+    font-size: 1.2em;
+    // font-family: 'Permanent Marker', cursive;
+    font-weight: bold;
+  }
+  .hours-time {
+    display: inline-flex;
+    font-weight: bold;
+    justify-content: flex-end;
+    min-width: 130px;
   }
 }
 
 .phone,
 .address {
-  color: #910705;
+  // color: #da0b0b;
+  color: #dd2323;
+  text-shadow: 1px 1px 0 #222;
   font-weight: 600;
   font-size: 1.5em;
+}
+
+.closed {
+  color: #dd2323;
 }
 
 .address {
@@ -471,8 +523,18 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
   }
 
   .steve-menu,
-  .steve-location {
+  .steve-contact {
     padding-bottom: 10px;
+
+    &::-webkit-scrollbar {
+      width: 0.08em;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: rgba(255 ,255 ,255, 0);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255 ,255 ,255, 0.6);
+    }
   }
   .sides-and-bevs {
     display: flex;
@@ -492,7 +554,25 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
       text-align: left;
     }
   }
+  .hours {
+    // ul {
+    //   li {
+    //     border: none;
+    //   }
+    // }
+    .hours-day {
+      min-width: 150px;
+      // justify-content: center;
+    }
+    .hours-time {
+      min-width: 300px;
+      justify-content: flex-end;
+    }
+  }
   #map {
-    min-height: 600px;
+    min-height: 500px;
+  }
+  .hidden-md {
+    display: none;
   }
 }

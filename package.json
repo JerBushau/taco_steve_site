@@ -4,7 +4,9 @@
   "description": "Website for Taco Steve in New Albany",
   "main": "index.html",
   "scripts": {
-    "watch-sass":"sass --cache-location style/sass/.sass_cache --watch style/sass:style/css",
+    "compile-sass":"sass --cache-location style/sass/.sass_cache style/sass/*.scss style/css/*.css",
+    "autoprefix-css": "postcss style/css/main.css -u autoprefixer -o style/css/main.css",
+    "watch-sass": "nodemon -e scss --watch style/sass -x \"npm run compile-sass && npm run autoprefix-css\"",
     "test": "none yet"
   },
   "repository": {
