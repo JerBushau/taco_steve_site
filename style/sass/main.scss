@@ -37,6 +37,7 @@ body {
 
 .site-wrapper {
   margin: auto;
+  position: relative;
   min-height: 100vh;
   max-width: 100%;
   display: flex;
@@ -49,8 +50,10 @@ body {
 
 .button-wrangler{
   position: fixed;
-  margin: auto;
   bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
   width: 100%;
   max-width: 1400px;
 }
@@ -87,6 +90,7 @@ header {
   justify-content: center;
   align-items: center;
   min-height: 300px;
+  margin: auto auto auto;
   // 'talk bubble'
   .chat-bubble {
     animation: chat-bubble 1s;
@@ -164,7 +168,7 @@ nav {
     letter-spacing: 1.1px;
     font-weight: normal;
     text-decoration: none;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: all 0.15s ease;
     transform: translateZ(0);
     &:active {
@@ -188,11 +192,9 @@ nav {
   opacity: 0;
   visibility: hidden;
   color: #eaeaeb;
-  position: fixed;
-  // display: flex;
+  position: absolute;
   top: 0;
   bottom: 0;
-  // left: -25px;
   height: 100vh;
   overflow-y: scroll;
   flex-direction: column;
@@ -201,11 +203,11 @@ nav {
   width: 100%;
   max-width: 1100px;
   padding: 10px;
-  border-left: 10px solid #222;
-  border-right: 10px solid #222;
-  // box-shadow: 0 0 14px #000;
+  border-radius: 0;
+  border: 10px solid;
+  border-image: linear-gradient(to top, #42444b, #2E3038);
+  border-image-slice: 1;
   background: linear-gradient(to bottom left, #42444b 35%, #2E3038);
-  // background: #2E3038;
   transition: all 0.4s;
   transform: translateZ(0);
   transform: translate(-5%, 0);
@@ -214,32 +216,32 @@ nav {
 .section-header {
   width: 100%;
   color: #333;
-  // text-shadow: 1px 1px 2px #000;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  // border-bottom: 3px solid #000;
   font-family: 'Permanent Marker', cursive;
-  box-shadow: 4px 8px 0 #377433;
+  box-shadow: 2px 4px 0 #377433;
   letter-spacing: 1.1px;
   font-weight: normal;
-  border-radius: 15px;
+  border-radius: 10px;
   text-align: center;
   background:linear-gradient(to bottom left, #6fe967 25%, #8bed85);;
 }
 
+// do the back button with transform:translate
 .back-button {
   position: absolute;
+  visibility: hidden;
   padding: 6px;
   opacity: 0;
   font-family: 'Permanent Marker', cursive;
   cursor: pointer;
   display: flex;
   align-items: center;
-  bottom: -70px;
-  right: 10px;
+  bottom: 55px;
+  right: 13px;
   height: 50px;
   background: rgba(235, 150, 33, 1);
   box-shadow: 3px 6px 0 #910707;
@@ -247,26 +249,24 @@ nav {
   letter-spacing: 1.1px;
   font-weight: normal;
   text-decoration: none;
-  border-radius: 15px;
+  border-radius: 10px;
   transition: all .5s, box-shadow 0.15s;
-  transform: translateZ(0);
+  transform: translate(0, 100px);
   &:active {
-    box-shadow: 1px 1px 0 #910707;
+    box-shadow: 2px 3px 0 #910707;
   }
 }
 
 .back-button-visible {
   opacity: 0.89;
   visibility: visible;
-  bottom: 55px;
+  transform: translate(0, 0);
 }
 
 .section-active {
   opacity: 1;
   visibility: visible;
-  // left: 50%;
   transform: translate(0, 0);
-  // max-height: initial;
 }
 
 .dark-bg {
@@ -418,7 +418,6 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
     text-align: center;
     text-shadow: 1px 1px 0 #000;
     margin-bottom: 0;
-    // border-bottom: 2px solid #333;
     font-weight: normal;
     font-family: 'Permanent Marker', cursive;
     font-weight: normal;
@@ -429,6 +428,8 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
     list-style: none;
     padding: 0;
     li {
+      display: flex;
+      justify-content: space-between;
       border-bottom: 2px dotted #333;
     }
   }
@@ -436,9 +437,8 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
     display: inline-flex;
     align-self: flex-start;
     font-weight: 600;
-    min-width: 110px;
+    min-width: 130px;
     font-size: 1.2em;
-    // font-family: 'Permanent Marker', cursive;
     font-weight: bold;
   }
   .hours-time {
@@ -451,7 +451,6 @@ ___  ___ _____ _   _ _   _   _____ _____ _____ _____ _____ _____ _   _
 
 .phone,
 .address {
-  // color: #da0b0b;
   color: #dd2323;
   text-shadow: 1px 1px 0 #222;
   font-weight: 600;
@@ -522,10 +521,17 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
     width: 100%;
   }
 
+  .site-wrapper {
+    height: 100vh;
+    overflow-y: auto;
+  }
   .steve-menu,
   .steve-contact {
+    position: absolute;
     padding-bottom: 10px;
-
+    border-width: 10px;
+    overflow-y: hidden;
+    bottom: inherit;
     &::-webkit-scrollbar {
       width: 0.08em;
     }
@@ -535,6 +541,9 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
     &::-webkit-scrollbar-thumb {
       background-color: rgba(255 ,255 ,255, 0.6);
     }
+  }
+  .section-active {
+    height: auto;
   }
   .sides-and-bevs {
     display: flex;
@@ -555,11 +564,6 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
     }
   }
   .hours {
-    // ul {
-    //   li {
-    //     border: none;
-    //   }
-    // }
     .hours-day {
       min-width: 150px;
       // justify-content: center;
@@ -568,6 +572,9 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
       min-width: 300px;
       justify-content: flex-end;
     }
+  }
+  .back-button {
+    right: 30px;
   }
   #map {
     min-height: 500px;
