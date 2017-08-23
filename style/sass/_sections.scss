@@ -11,13 +11,13 @@
 .steve-contact {
   @include flex-box($dir: column, $justify: center, $align-items: center);
   @include text($section-text-color);
-  @include position(absolute, $top: 0, $bottom: 0);
+  @include position(absolute, 0, 0, $top: 0, $bottom: 0);
   opacity: 0;
   visibility: hidden;
   height: 100vh;
   overflow-y: scroll;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   padding: 10px;
   border-radius: 0;
   border: 10px solid;
@@ -40,9 +40,8 @@
   background: $section-header-gradient;
 }
 
-// do the back button with transform:translate
 .back-button {
-  @include button(3px 6px 0, auto);
+  @include button(4px 8px 0, auto);
   @include position(absolute, 13px, $bottom: 55px);
   visibility: hidden;
   opacity: 0;
@@ -61,10 +60,6 @@
   opacity: 1;
   visibility: visible;
   transform: translate(0, 0);
-}
-
-.dark-bg {
-  background: $site-bg-active;
 }
 
 /*

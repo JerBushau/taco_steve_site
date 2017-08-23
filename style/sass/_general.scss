@@ -32,6 +32,10 @@ body {
   transition: background 0.4s;
 }
 
+.dark-bg {
+  background: $site-bg-active;
+}
+
 .button-wrangler{
   @include position(fixed, 0, 0, $bottom: 0);
   margin: 0 auto;

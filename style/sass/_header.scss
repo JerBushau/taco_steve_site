@@ -31,7 +31,7 @@ header {
       width: 0;
       height: 0;
       border: 23px solid;
-      border-color: #000 transparent transparent transparent;
+      border-color: $site-color-black transparent transparent transparent;
     }
     &:after{
       @include position(absolute, 0, 63px, auto, -36px);

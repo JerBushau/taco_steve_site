@@ -7,14 +7,14 @@
 //
 
 $site-bg-color: #fcf0df;
-$site-bg-active: #b2b4ca;
+$site-bg-active: rgba(178, 180, 202, 0.7699);
 $site-color-white: #eaeaeb;
 $site-color-black: #333;
 
 $section-bg-gradient: linear-gradient(to bottom left, #42444b 35%, #2E3038);
 $section-header-text-color: $site-color-black;
 $section-header-shadow-color: #377433;
-$section-header-shadow: 3px 6px 0 $section-header-shadow-color;
+$section-header-shadow: 4px 8px 0 $section-header-shadow-color;
 $section-header-gradient: linear-gradient(to bottom left, #6fe967 25%, #8bed85);
 $section-border-gradient: linear-gradient(to top, #42444b, #2E3038);
 $section-text-color: $site-color-white;

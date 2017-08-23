@@ -25,7 +25,7 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
 
   .steve-menu,
   .steve-contact {
-    @include position(absolute, $bottom: inherit);
+    @include position(absolute, unset, unset, $bottom: inherit);
     padding-bottom: 10px;
     border-width: 15px;
     overflow-y: hidden;
