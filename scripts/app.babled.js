@@ -2,22 +2,22 @@
 
 // google maps setup
 
-// var initMap = function() {
-//   var map = new google.maps.Map(document.getElementById('map'), {
-//     center: { lat: 38.2875009, lng: -85.8175687 },
-//     zoom: 18,
-//     disableDefaultUI: true,
-//     scrollwheel: false
-//   });
-//   var marker = new google.maps.Marker({
-//     position: { lat: 38.287483, lng: -85.817553 },
-//     map: map,
-//     title: 'Taco Steve!',
-//     icon: {
-//       url: 'imgs/taco_marker.png'
-//     }
-//   });
-// }
+window.initMap = function () {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 38.2875009, lng: -85.8175687 },
+    zoom: 18,
+    disableDefaultUI: true,
+    scrollwheel: false
+  });
+  var marker = new google.maps.Marker({
+    position: { lat: 38.287483, lng: -85.817553 },
+    map: map,
+    title: 'Taco Steve!',
+    icon: {
+      url: 'imgs/taco_marker.png'
+    }
+  });
+};
 
 var menuButton = document.getElementById('menu');
 var contactButton = document.getElementById('contact');

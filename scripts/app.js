@@ -2,9 +2,9 @@
 
 // google maps setup
 
-function initMap() {
+window.initMap = function() {
   let map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 38.2875009, lng:-85.8175687 },
+    center: { lat: 38.2875009, lng: -85.8175687 },
     zoom: 18,
     disableDefaultUI: true,
     scrollwheel: false

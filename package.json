@@ -4,9 +4,12 @@
   "description": "Website for Taco Steve in New Albany",
   "main": "index.html",
   "scripts": {
-    "compile-sass": "sass --cache-location style/sass/.sass_cache style/sass/*.scss style/css/*.css",
+    "babel-js": "node_modules/.bin/babel --presets es2015 scripts/app.js -o scripts/app.babled.js",
+    "compile-sass": "sass --cache-location style/sass/.sass_cache style/sass/main.scss style/css/main.css",
     "autoprefix-css": "postcss style/css/main.css -u autoprefixer -o style/css/main.css",
     "watch-sass": "nodemon -e scss --watch style/sass -x \"npm run compile-sass && npm run autoprefix-css\"",
+    "watch-js": "nodemon -e js --watch scripts/app.js -x \"npm run babel-js\"",
+    "dev-watch": "npm run watch-js & npm run watch-sass",
     "test": "none yet"
   },
   "repository": {
@@ -16,9 +19,8 @@
   "author": "Jeremiah Bushau",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0"
-  },
-  "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1"
-  }
+  },
+  "dependencies": {}
 }
