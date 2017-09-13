@@ -1,0 +1,28 @@
+TODO:
+-----
+- Learn more about Sass and how to structure the related directories and how to better logically break things up. (look further into OOCSS concepts and ideas)
+- Pitch the site to Steve!
+
+Goals:
+------
+- Serve as a single page 'homebase' for his web presence.
+- Simple UI that is easy and a fun to use.
+- Display the menu and contact/location info along with links to Steve's very positive reviews on social media.
+- Primarily targeting mobile users.
+- Use a mobile first strategy and keep cross browser compatibility in mind throughout.
+- Site should load fast and not hinder users on a slow connection to the web.
+
+Several tools were used to create this site and achieve the aforementioned goals, such as:
+------------------------------------------------------------------------------------------
+- Sass - a CSS pre-processor
+- Auto-prefixer - a tool for adding vendor prefixes to CSS
+- Babel - a JS compiler that allows the use of modern JS syntax/features
+
+To automate the use of these tools I used NPM scripts and Nodemon to watch and update files during development.
+
+Things I learned from developing the Taco Steve website:
+-----------------------------------------------------
+- Cross browser compatibility is something that can require a lot of thought and effort, however it is very satisfying to accomplish.
+- The importance of a mobile first design philosophy.
+- CSS animations/transitions are fun/look great and there are a number of properties that they play particularly well with e.g. transform: translate() scale() rotate() and opacity. While others don't play so well, e.g. margin. Learning this was critical to improving the performance of the site, especially on mobile devices.
+- The Google maps API has awesome and extensive documentation and the maps themselves are easy to style (although I ended up leaving this one default).
