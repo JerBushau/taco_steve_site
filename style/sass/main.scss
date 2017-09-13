@@ -1,6 +1,6 @@
 // scss manifeset
 // consider putting these in folders
-// i.e.
+// e.g.
 // util: vars, mixins
 // general styles: general
 // components: header, nav, sections
@@ -11,11 +11,11 @@
 // media queries to do with header or child of header should be located in header file...
 
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Condensed');
-@import '_vars';
-@import '_mixins';
-@import '_general';
-@import '_header';
-@import '_nav';
-@import '_sections';
-@import '_animations';
-@import '_media-queries';
+@import './partials/_vars';
+@import './partials/_mixins';
+@import './partials/_general';
+@import './partials/_header';
+@import './partials/_nav';
+@import './partials/_sections';
+@import './partials/_animations';
+@import './partials/_media-queries';

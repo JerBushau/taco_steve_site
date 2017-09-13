@@ -57,3 +57,7 @@ img {
 article {
   @include flex-box(flex, column, $align-items: center);
 }
+
+a {
+  text-decoration: none;
+}
