@@ -19,6 +19,7 @@ window.initMap = function () {
   });
 };
 
+//
 var menuButton = document.getElementById('menu');
 var contactButton = document.getElementById('contact');
 var backButton = document.querySelector('.back-button');
@@ -27,7 +28,7 @@ var siteWrapper = document.querySelector('.site-wrapper');
 var menu = document.querySelector('.steve-menu');
 var contact = document.querySelector('.steve-contact');
 
-// nav menu button handlers
+// nav menu and back button handlers
 function backButtonHandler(activesSection) {
   activesSection.classList.toggle('section-active');
   backButton.classList.toggle('back-button-visible');
@@ -46,7 +47,7 @@ function contactButtonHandler() {
   if (window.innerWidth > 750) siteWrapper.classList.add('dark-bg');
 };
 
-// nav menu thing
+// click event to handle site navigation
 siteWrapper.addEventListener('click', function (e) {
   var activesSection = document.querySelector('.section-active');
 
@@ -58,5 +59,11 @@ siteWrapper.addEventListener('click', function (e) {
     siteWrapper.classList.remove('dark-bg');
   }
 
-  if (e.target === backButton) backButtonHandler(activesSection);else if (e.target === menuButton) menuButtonHandler();else if (e.target === contactButton) contactButtonHandler();
+  if (e.target === backButton) {
+    backButtonHandler(activesSection);
+  } else if (e.target === menuButton) {
+    menuButtonHandler();
+  } else if (e.target === contactButton) {
+    contactButtonHandler();
+  }
 });
