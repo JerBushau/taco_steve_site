@@ -50,5 +50,6 @@
   transition: all 0.15s ease;
   &:active {
     box-shadow: 2px 3px 0 $button-shadow-color;
+    transform: translate(0, 5px);
   }
 }
