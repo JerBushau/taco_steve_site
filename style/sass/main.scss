@@ -7,8 +7,8 @@
 // animations
 // media queries
 
-// queries could/should go in the associated file, i.e.
-// media queries to do with header or child of header should be located in header file...
+// media queries could/should go in the associated file, i.e.
+// queries to do with header or child of header should be located in header file...
 
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Condensed');
 @import './partials/_vars';
@@ -18,4 +18,6 @@
 @import './partials/_nav';
 @import './partials/_sections';
 @import './partials/_animations';
+@import './partials/_tacos';
 @import './partials/_media-queries';
+

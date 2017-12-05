@@ -10,7 +10,7 @@
 header {
   @include flex-box(flex, column, center, center);
   min-height: 300px;
-  margin: auto;
+  margin: 5vh auto auto;
   // 'talk bubble'
   .chat-bubble {
     @include font(normal, 1.3em, $heading-font-fam);

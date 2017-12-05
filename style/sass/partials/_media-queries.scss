@@ -18,6 +18,10 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
     width: 100%;
   }
 
+  header {
+    margin: auto;
+  }
+
   .site-wrapper {
     height: 100vh;
     overflow-y: auto;
@@ -82,6 +86,12 @@ ___  ___ ___________ _____  ___    _____ _   _ ___________ _____ _____ _____
   }
 
   .hidden-md {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .hidden-sm {
     display: none;
   }
 }
