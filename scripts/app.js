@@ -4,7 +4,7 @@
 window.initMap = function() {
   let map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 38.2875009, lng: -85.8175687 },
-    zoom: 18,
+    zoom: 19,
     disableDefaultUI: true,
     scrollwheel: false
   });
@@ -33,25 +33,25 @@ function backButtonHandler(activesSection) {
   activesSection.classList.toggle('section-active');
   backButton.classList.toggle('back-button-visible');
   siteWrapper.classList.remove('dark-bg');
-};
+}
 
-function menuButtonHandler() {
+function menuButtonHandler(e) {
+  e.preventDefault();
   menu.classList.add('section-active');
   backButton.classList.add('back-button-visible');
   if (window.innerWidth > 750) siteWrapper.classList.add('dark-bg');
-};
+}
 
-function contactButtonHandler() {
+function contactButtonHandler(e) {
+  e.preventDefault();
   contact.classList.add('section-active');
   backButton.classList.add('back-button-visible');
   if (window.innerWidth > 750) siteWrapper.classList.add('dark-bg');
-};
+}
 
 // click event to handle site navigation
 siteWrapper.addEventListener('click', e => {
   let activesSection = document.querySelector('.section-active');
-
-  e.preventDefault()
 
   if (activesSection && e.target.className === 'site-wrapper dark-bg') {
     activesSection.classList.remove('section-active');
@@ -61,9 +61,9 @@ siteWrapper.addEventListener('click', e => {
 
   if (e.target === backButton) {
     backButtonHandler(activesSection);
-  }  else if (e.target === menuButton) {
-    menuButtonHandler();
+  } else if (e.target === menuButton) {
+    menuButtonHandler(e);
   } else if (e.target === contactButton) {
-    contactButtonHandler();
+    contactButtonHandler(e);
   }
 });
