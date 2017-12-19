@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .taco {
@@ -25,7 +25,7 @@
 }
 
 @for $i from 1 through 10 {
-  $timing: (random(3) + 4) + s;
+  $timing: (random(3) + 6) + s;
   $animation: fall-#{random(3)};
   .taco-container-#{$i} {
     visibility: hidden;

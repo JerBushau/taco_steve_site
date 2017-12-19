@@ -2,6 +2,7 @@ TODO:
 -----
 - Learn more about Sass and how to structure the related directories and how to better logically break things up. (look further into OOCSS concepts and ideas)
 - Pitch the site to Steve!
+- Put media queries into their appropriate section rather than in a seperate file, to better keep things logically grouped.
 
 Goals:
 ------
@@ -22,6 +23,6 @@ To automate the use of these tools I used NPM scripts and Nodemon to watch and u
 
 Things I have learned from developing the Taco Steve website:
 --------------------------------------------------------
-- Cross browser compatibility requires a lot of testing, thought and effort, however it is very satisfying to accomplish.
+- Cross browser compatibility requires a lot of testing, thought and effort.
 - The importance of a mobile first design philosophy.
 - CSS animations/transitions are fun/look great and there are a number of properties that they play particularly well with e.g. transform: translate() scale() rotate() and opacity. While others don't play so well, e.g. margin, elements w/ position: fixed/absolute. Learning this was critical to improving the performance of the site, especially on mobile devices.
